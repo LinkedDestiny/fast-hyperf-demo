@@ -1,0 +1,20 @@
+{
+    "name": "link-cloud/fast-hyperf-demo",
+    "type": "project",
+    "description": "LinkCloud Fast Hyperf Demo",
+    "license": "Apache-2.0",
+    "require": {
+        "php": ">=8.0",
+        "ext-swoole": ">=4.8",
+
+        "link-cloud/fast-hyperf": "dev-master"
+    },
+
+    "autoload": {
+        "psr-4": {
+            "LinkCloud\\Fast\\Hyperf\\Demo\\": "app/"
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}

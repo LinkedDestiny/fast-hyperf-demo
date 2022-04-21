@@ -1,0 +1,14 @@
+.idea/
+.git/
+.DS_Store
+runtime/
+vendor/
+temp/
+.env
+.env.test
+.env.dev
+.env.online
+*.lock
+test.php
+http.json
+temp
