@@ -25,7 +25,7 @@ use LinkCloud\Fast\Hyperf\Framework\Entity\Response\BaseSuccessResponse;
 use Throwable;
 
 #[Controller(prefix: "/api/v1/user")]
-#[Api(tags: "管理", description: "管理")]
+#[Api(tags: "用户管理", description: "用户管理")]
 #[ApiHeader(name: 'Authorization')]
 class UserController extends BaseController
 {
@@ -33,7 +33,7 @@ class UserController extends BaseController
     public UserLogic $userLogic;
 
     #[PostMapping(path: "list")]
-    #[ApiOperation("获取列表")]
+    #[ApiOperation("获取用户列表")]
     public function getList(#[Valid] #[RequestBody] UserListRequest $request): UserListResponse
     {
         $result = $this->userLogic->getList($request->condition->toArray(), $request->search->toArray(), $request->sort->toArray(), $request->page);
@@ -44,7 +44,7 @@ class UserController extends BaseController
      * @throws Throwable
      */
     #[PostMapping(path: "create")]
-    #[ApiOperation("创建")]
+    #[ApiOperation("创建用户")]
     public function create(#[Valid] #[RequestBody] UserCreateRequest $request): BaseSuccessResponse
     {
         $this->userLogic->create($request->condition->toArray(), $request->data->toArray());
@@ -55,7 +55,7 @@ class UserController extends BaseController
      * @throws Throwable
      */
     #[PostMapping(path: "modify")]
-    #[ApiOperation("更新")]
+    #[ApiOperation("更新用户")]
     public function modify(#[Valid] #[RequestBody] UserModifyRequest $request): BaseSuccessResponse
     {
         $this->userLogic->modify($request->condition->toArray(), $request->search->toArray(), $request->data->toArray());
@@ -66,7 +66,7 @@ class UserController extends BaseController
      * @throws Throwable
      */
     #[PostMapping(path: "remove")]
-    #[ApiOperation("删除")]
+    #[ApiOperation("删除用户")]
     public function remove(#[Valid] #[RequestBody] UserRemoveRequest $request): BaseSuccessResponse
     {
         $this->userLogic->remove($request->condition->toArray(), $request->search->toArray());
@@ -77,7 +77,7 @@ class UserController extends BaseController
      * @throws Throwable
      */
     #[PostMapping(path: "detail")]
-    #[ApiOperation("获取详情")]
+    #[ApiOperation("获取用户详情")]
     public function detail(#[Valid] #[RequestBody] UserDetailRequest $request): UserDetailResponse
     {
         $result = $this->userLogic->detail($request->condition->toArray(), $request->search->toArray());
