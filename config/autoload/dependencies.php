@@ -7,7 +7,7 @@ if (!function_exists('loadDaoInterface')) {
     function loadDaoInterface(): array
     {
         $dir = [
-            # BASE_PATH . '/app/Repository/Dao/MySQL',
+            BASE_PATH . '/app/Repository/Dao/MySQL',
         ];
         if (empty($dir)) {
             return [];
